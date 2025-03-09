@@ -17,5 +17,21 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <spring-ai.version>0.8.1</spring-ai.version>
     </properties>
+    <dependencies>
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.ai</groupId>-->
+<!--            <artifactId>spring-ai-tika-document-reader</artifactId>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.ai</groupId>-->
+<!--            <artifactId>spring-ai-pgvector-store</artifactId>-->
+<!--        </dependency>-->
+
+        <dependency>
+            <groupId>org.wenzhuo.deepseekRAG</groupId>
+            <artifactId>tigger</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
 
 </project>

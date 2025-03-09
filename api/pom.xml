@@ -17,5 +17,11 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <spring-ai.version>0.8.1</spring-ai.version>
     </properties>
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.ai</groupId>
+            <artifactId>spring-ai-ollama</artifactId>
+        </dependency>
+    </dependencies>
 
 </project>
