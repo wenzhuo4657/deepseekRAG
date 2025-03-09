@@ -17,7 +17,7 @@ public class OllamaChatClientConfig {
     @Value("${spring.ai.ollama.base-url}")
     public  String baseUrl;
     @Bean
-    public OllamaChatClient ollamaChatClient(){
-        return  new OllamaChatClient(new OllamaApi(baseUrl));
+    public OllamaChatClient ollamaChatClient(OllamaApi ollamaApi){
+        return  new OllamaChatClient(ollamaApi);
     }
 }
