@@ -63,7 +63,7 @@ public class RAGtest {
 
     @Test
     public  void chat(){
-        String message = "王大瓜，什么时候出生";
+        String message = "李二，什么时候出生";
         String SYSTEM_PROMPT = """
             Use the information from the DOCUMENTS section to provide accurate answers but act as if you knew this information innately.
             If unsure, simply state that you don't know.
@@ -89,6 +89,10 @@ public class RAGtest {
         log.info("测试结果：{}", JSON.toJSONString(chatResponse));
     }
 
+    /**
+     *  @author:wenzhuo4657
+        des: simpleVectorStore测试
+    */
     @Test
     public  void test(){
         TikaDocumentReader reader = new TikaDocumentReader("./data/test.md");

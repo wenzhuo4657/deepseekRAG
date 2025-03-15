@@ -1,6 +1,7 @@
 package org.wenzhuo.deepseekRAG.api;
 
 import org.springframework.ai.chat.ChatResponse;
+import org.springframework.web.bind.annotation.RequestParam;
 import reactor.core.publisher.Flux;
 
 /**
@@ -11,4 +12,6 @@ import reactor.core.publisher.Flux;
 public interface IAiService {
     public ChatResponse generate(String model, String message);
     public Flux<ChatResponse> generateStream(String model, String message);
+
+    public Flux<ChatResponse> generateStreamRag(@RequestParam String model, @RequestParam String ragTag, @RequestParam String message);
 }
