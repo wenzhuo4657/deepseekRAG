@@ -14,4 +14,7 @@ public interface IAiService {
     public Flux<ChatResponse> generateStream(String model, String message);
 
     public Flux<ChatResponse> generateStreamRag(@RequestParam String model, @RequestParam String ragTag, @RequestParam String message);
+
+
+
 }
