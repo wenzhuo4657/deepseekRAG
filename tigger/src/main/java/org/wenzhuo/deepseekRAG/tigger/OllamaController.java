@@ -17,7 +17,7 @@ import org.springframework.ai.vectorstore.SearchRequest;
 import org.springframework.ai.vectorstore.pgvector.PgVectorStore;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;
-import org.wenzhuo.deepseekRAG.tigger.api.IAiService;
+import org.wenzhuo.deepseekRAG.api.IAiService;
 import reactor.core.publisher.Flux;
 
 import java.util.ArrayList;

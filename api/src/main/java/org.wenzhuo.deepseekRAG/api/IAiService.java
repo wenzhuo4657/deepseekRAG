@@ -1,4 +1,4 @@
-package org.wenzhuo.deepseekRAG.tigger.api;
+package org.wenzhuo.deepseekRAG.api;
 
 
 import org.springframework.ai.chat.model.ChatResponse;

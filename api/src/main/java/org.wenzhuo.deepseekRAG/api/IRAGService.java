@@ -1,8 +1,8 @@
-package org.wenzhuo.deepseekRAG.tigger.api;
+package org.wenzhuo.deepseekRAG.api;
 
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
-import org.wenzhuo.deepseekRAG.tigger.api.reponse.Response;
+import org.wenzhuo.deepseekRAG.api.reponse.Response;
 
 import java.util.List;
 

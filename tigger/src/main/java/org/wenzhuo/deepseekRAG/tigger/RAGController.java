@@ -17,8 +17,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
-import org.wenzhuo.deepseekRAG.tigger.api.IRAGService;
-import org.wenzhuo.deepseekRAG.tigger.api.reponse.Response;
+import org.wenzhuo.deepseekRAG.api.IRAGService;
+import org.wenzhuo.deepseekRAG.api.reponse.Response;
 
 import java.io.File;
 import java.io.IOException;

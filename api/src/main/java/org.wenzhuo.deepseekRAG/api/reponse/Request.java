@@ -1,4 +1,4 @@
-package org.wenzhuo.deepseekRAG.tigger.api.reponse;
+package org.wenzhuo.deepseekRAG.api.reponse;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -9,15 +9,20 @@ import java.io.Serializable;
 
 /**
  * @author: wenzhuo4657
- * @date: 2024/10/10
+ * @date: 2024/12/4
  * @description:
  */
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Response<T> implements Serializable {
-    private String code;
-    private String info;
+public class Request<T> implements Serializable {
+
+    /** 请求应用ID */
+    private String appId;
+    /** 请求应用Token */
+    private String appToken;
+    /** 请求对象 */
     private T data;
+
 }
