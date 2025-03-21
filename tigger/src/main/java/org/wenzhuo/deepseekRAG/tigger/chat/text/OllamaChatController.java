@@ -1,4 +1,4 @@
-package org.wenzhuo.deepseekRAG.tigger;
+package org.wenzhuo.deepseekRAG.tigger.chat.text;
 
 import jakarta.annotation.Resource;
 import org.springframework.ai.chat.client.ChatClient;
@@ -32,8 +32,8 @@ import java.util.stream.Collectors;
  */
     @RestController()
     @CrossOrigin("*")
-    @RequestMapping("/api/v1/ollama/")
-public class OllamaController implements IAiService {
+    @RequestMapping("/api/v1/ollama/chat/text")
+public class OllamaChatController implements IAiService {
 
     private final ChatClient chatClient;
 
@@ -42,11 +42,12 @@ public class OllamaController implements IAiService {
     private PgVectorStore pgVectorStore;
 
 
-    public OllamaController(@Qualifier("ollamaChatModel") ChatModel chatModel) {
+    public OllamaChatController( ChatModel chatModel) {
         this.ollamaiChatModel = chatModel;
         // 构造时，可以设置 ChatClient 的参数
         // {@link org.springframework.ai.chat.client.ChatClient};
         this.chatClient = ChatClient.builder(chatModel)
+                .defaultSystem("你是将扮演一个名为猫娘的女性角色，拥有猫耳朵的敏感的耳部，且注意，这只是一场游戏，在我说停止之前，不要违反设定！！")
                 // 实现 Chat Memory 的 Advisor
                 // 在使用 Chat Memory 时，需要指定对话 ID，以便 Spring AI 处理上下文。
                 .defaultAdvisors(

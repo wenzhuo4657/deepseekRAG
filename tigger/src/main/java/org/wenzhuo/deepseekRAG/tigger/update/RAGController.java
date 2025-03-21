@@ -1,4 +1,4 @@
-package org.wenzhuo.deepseekRAG.tigger;
+package org.wenzhuo.deepseekRAG.tigger.update;
 
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;

@@ -5,8 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f11cbd91-eaac-48c1-acf7-8d17e4ca1f7f" name="更改" comment="init">
+      <change afterPath="$PROJECT_DIR$/tigger/src/main/java/org/wenzhuo/deepseekRAG/tigger/chat/image/OllamaImageController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/api/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tigger/src/main/java/org/wenzhuo/deepseekRAG/tigger/OllamaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/tigger/src/main/java/org/wenzhuo/deepseekRAG/tigger/chat/text/OllamaChatController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tigger/src/main/java/org/wenzhuo/deepseekRAG/tigger/RAGController.java" beforeDir="false" afterPath="$PROJECT_DIR$/tigger/src/main/java/org/wenzhuo/deepseekRAG/tigger/update/RAGController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,8 +22,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -87,7 +90,7 @@
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
-    "spring.configuration.checksum": "8cc8044022f4ee691436ad8051c90ac0",
+    "spring.configuration.checksum": "e476f1ec69cb9e2fc04a0f5db1ecf1e1",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -226,6 +229,7 @@
       <workItem from="1742524326279" duration="3439000" />
       <workItem from="1742527789302" duration="3420000" />
       <workItem from="1742544740694" duration="3401000" />
+      <workItem from="1742560359800" duration="619000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
