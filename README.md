@@ -1,1 +1,2 @@
-利用通用ai完成增强搜索
+该分支选用spring-ai-alibaba集成外部ai
+

@@ -1,6 +1,7 @@
-package org.wenzhuo.deepseekRAG.api;
+package org.wenzhuo.deepseekRAG.tigger.api;
 
-import org.springframework.ai.chat.ChatResponse;
+
+import org.springframework.ai.chat.model.ChatResponse;
 import org.springframework.web.bind.annotation.RequestParam;
 import reactor.core.publisher.Flux;
 

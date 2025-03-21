@@ -10,15 +10,15 @@ import org.redisson.api.RedissonClient;
 import org.springframework.ai.document.Document;
 import org.springframework.ai.reader.tika.TikaDocumentReader;
 import org.springframework.ai.transformer.splitter.TokenTextSplitter;
-import org.springframework.ai.vectorstore.PgVectorStore;
+import org.springframework.ai.vectorstore.pgvector.PgVectorStore;
 import org.springframework.core.io.PathResource;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
-import org.wenzhuo.deepseekRAG.api.IRAGService;
-import org.wenzhuo.deepseekRAG.api.reponse.Response;
+import org.wenzhuo.deepseekRAG.tigger.api.IRAGService;
+import org.wenzhuo.deepseekRAG.tigger.api.reponse.Response;
 
 import java.io.File;
 import java.io.IOException;
@@ -77,6 +77,7 @@ public class RAGController implements IRAGService {
     }
 
     @Override
+    @RequestMapping(value = "analyze_git_repository",method = RequestMethod.POST)
     public Response<String> analyzeGitRepository(String repoUrl, String userName, String token) throws Exception {
         String localPath = "./git-cloned-repo";//本地仓库根地址
         String repoProjectName = extractProjectName(repoUrl);

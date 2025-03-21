@@ -1,17 +1,20 @@
 spring:
   datasource:
-    driver-class-name: org.postgresql.Driver
     username: postgres
     password: postgres
     url: jdbc:postgresql://140.143.170.96:5432/ai-rag-knowledge
-    type: com.zaxxer.hikari.HikariDataSource
   ai:
+    dashscope:
+      api-key: sk-84121097193a4d6881d0ce6998fdd988
     ollama:
-      base-url: http://140.143.170.96:11434
-      embedding:
-        options:
-          num-batch: 512
-        model: nomic-embed-text
+        base-url: http://140.143.170.96:11434
+        chat:
+          model: deepseek-r1:1.5b
+    vectorstore:
+        pgvector:
+          dimensions: 1536
+          index-type: hnsw
+          distance-type: cosine_distance
 redis:
   sdk:
     config:
