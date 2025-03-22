@@ -12,6 +12,7 @@
         <module>api</module>
         <module>app</module>
         <module>tigger</module>
+        <module>domain</module>
     </modules>
 
     <properties>

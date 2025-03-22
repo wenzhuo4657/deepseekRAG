@@ -15,9 +15,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api/v1/ollama/chat/image")
 public class OllamaImageController {
 
-    private final ImageModel imageModel;
-
-    OllamaImageController(ImageModel imageModel) {
-        this.imageModel = imageModel;
-    }
+//    private final ImageModel imageModel;
+//
+//    OllamaImageController(ImageModel imageModel) {
+//        this.imageModel = imageModel;
+//    }
 }
