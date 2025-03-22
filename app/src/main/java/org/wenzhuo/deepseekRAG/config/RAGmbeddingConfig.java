@@ -4,6 +4,8 @@ package org.wenzhuo.deepseekRAG.config;
 import org.springframework.ai.embedding.EmbeddingModel;
 import org.springframework.ai.ollama.api.OllamaApi;
 import org.springframework.ai.ollama.api.OllamaOptions;
+import org.springframework.ai.rag.retrieval.search.DocumentRetriever;
+import org.springframework.ai.rag.retrieval.search.VectorStoreDocumentRetriever;
 import org.springframework.ai.transformer.splitter.TokenTextSplitter;
 import org.springframework.ai.vectorstore.pgvector.PgVectorStore;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -34,9 +36,20 @@ public class RAGmbeddingConfig {
     des: PostgreSQL/PGVector向量存储
      */
     @Bean
-    public PgVectorStore pgVectorStore(@Qualifier("ollamaEmbeddingModel") EmbeddingModel embeddingModel, JdbcTemplate jdbcTemplate) {
-        return PgVectorStore.builder(jdbcTemplate,embeddingModel).build();
+    public PgVectorStore pgVectorStore(EmbeddingModel embeddingModel, JdbcTemplate jdbcTemplate) {
+        return PgVectorStore.builder(jdbcTemplate,embeddingModel).vectorTableName("VectorStore").build();
     }
+
+    /**
+     *  @author:wenzhuo4657
+        des: PGVector的文档检索
+    */
+    @Bean
+    public VectorStoreDocumentRetriever documentRetriever(PgVectorStore pgVectorStore){
+        return VectorStoreDocumentRetriever.builder().vectorStore(pgVectorStore)
+                .build();
+    }
+
 
 
 

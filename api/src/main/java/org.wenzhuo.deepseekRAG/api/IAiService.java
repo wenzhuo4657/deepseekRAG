@@ -2,6 +2,7 @@ package org.wenzhuo.deepseekRAG.api;
 
 
 import org.springframework.ai.chat.model.ChatResponse;
+import org.springframework.ai.rag.retrieval.search.DocumentRetriever;
 import org.springframework.web.bind.annotation.RequestParam;
 import reactor.core.publisher.Flux;
 
