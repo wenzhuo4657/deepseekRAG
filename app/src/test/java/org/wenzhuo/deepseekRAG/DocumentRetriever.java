@@ -28,6 +28,7 @@ public class DocumentRetriever {
     @Test
     public  void  test(){
 
-        List<Document> documentList = documentRetriever.retrieve(new Query("What's spring ai"));
+        List<Document> documentList = documentRetriever.retrieve(new Query("如何看待封建"));
+        System.out.println();
     }
 }

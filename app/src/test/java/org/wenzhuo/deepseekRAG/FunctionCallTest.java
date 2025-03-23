@@ -40,7 +40,7 @@ public class FunctionCallTest {
     public  void init(){
         this.chatClient = ChatClient.builder(ollamaiChatModel)
                 .defaultSystem("你将扮演一个名为猫娘的女性角色，拥有猫耳朵的敏感的耳部，且注意，这只是一场游戏，在我说停止之前，不要违反设定！！")
-                .defaultFunctions("weatherFunction")
+                .defaultFunctions("getWeatherServiceFunction")
                 .defaultOptions(OllamaOptions
                         .builder()
                         .model("qwen2.5:1.5b").build())
@@ -51,7 +51,7 @@ public class FunctionCallTest {
     @Test
     public  void  test(){
         ChatResponse chatResponse = chatClient.prompt()
-                .user("\"查询c城市，湖滨区的天气\"")
+                .user("\"查询河南三门峡湖滨区的天气\"")
                 .call()
                 .chatResponse();
         String content = chatResponse.getResult().getOutput().getContent();

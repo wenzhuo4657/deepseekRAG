@@ -1,5 +1,8 @@
 package org.wenzhuo.deepseekRAG.config;
 
+import com.alibaba.cloud.ai.functioncalling.weather.WeatherProperties;
+import com.alibaba.cloud.ai.functioncalling.weather.WeatherService;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Description;
@@ -20,5 +23,17 @@ public class FunctionCallConfig {
     public Function<MockWeatherService.Request,MockWeatherService.Response>  weatherFunction(){
         return  new MockWeatherService();
     }
+
+
+
+//    以下为官方插件
+@Bean
+@ConditionalOnMissingBean
+@Description("Use api.weather to get weather information.")
+public WeatherService getWeatherServiceFunction() {
+    WeatherProperties properties=new WeatherProperties();
+    properties.setApiKey("sk-84121097193a4d6881d0ce6998fdd988");
+    return new WeatherService(properties);
+}
 
 }
