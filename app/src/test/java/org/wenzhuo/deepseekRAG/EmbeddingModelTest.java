@@ -34,7 +34,6 @@ public class EmbeddingModelTest {
     @Test
     public  void embed(){
 
-//        这个相似计算如何使用矢量数据库？如何使用？
         EmbeddingResponse embed = this.embeddingModel.call(new EmbeddingRequest(List.of("如何看待封建、资本和当下"),
                 OllamaOptions.builder()
                         .model("qwen2.5:1.5b").build()));

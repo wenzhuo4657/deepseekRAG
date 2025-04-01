@@ -12,10 +12,7 @@ import org.springframework.ai.reader.tika.TikaDocumentReader;
 import org.springframework.ai.transformer.splitter.TokenTextSplitter;
 import org.springframework.ai.vectorstore.pgvector.PgVectorStore;
 import org.springframework.core.io.PathResource;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.wenzhuo.deepseekRAG.api.IRAGService;
 import org.wenzhuo.deepseekRAG.api.reponse.Response;
@@ -57,7 +54,7 @@ public class RAGController implements IRAGService {
 
     @Override
     @RequestMapping(value = "file/update",method = RequestMethod.POST,headers = "content-type=multipart/form-data")
-    public Response<String> uploadFile(String ragTag, List<MultipartFile> files) {
+    public Response<String> uploadFile(@RequestParam(value = "ragTag") String ragTag, @RequestParam(value = "files") List<MultipartFile> files) {
         log.info("上传知识库{}",ragTag);
         for (MultipartFile file: files){
             TikaDocumentReader documentReader = new TikaDocumentReader(file.getResource());

@@ -62,7 +62,7 @@ public class OllamaChatController implements IAiService {
                 .defaultOptions(
                         OllamaOptions.builder()
                                 .topP(0.7)
-                                .model("llam3")
+                                .model("qwen2.5:1.5b")
                                 .build()
                 )
                 .build();
@@ -73,7 +73,7 @@ public class OllamaChatController implements IAiService {
      */
     @RequestMapping(value = "generate", method = RequestMethod.GET)
     @Override
-    public ChatResponse generate(@RequestParam String model, @RequestParam String message) {
+    public ChatResponse generate(@RequestParam(value = "model") String model, @RequestParam(value = "message") String message) {
         return chatClient.prompt()
                 .user(message)
                 .options(ChatOptions.builder().model(model).build())

@@ -5,6 +5,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.ai.chat.memory.ChatMemory;
 import org.springframework.ai.chat.memory.InMemoryChatMemory;
 import org.springframework.ai.embedding.EmbeddingModel;
+import org.springframework.ai.ollama.OllamaEmbeddingModel;
 import org.springframework.ai.ollama.api.OllamaApi;
 import org.springframework.ai.ollama.api.OllamaOptions;
 import org.springframework.ai.rag.retrieval.search.DocumentRetriever;
@@ -45,7 +46,7 @@ public class RAGmbeddingConfig {
     des: PostgreSQL/PGVector向量存储
      */
     @Bean
-    public PgVectorStore pgVectorStore(EmbeddingModel embeddingModel, JdbcTemplate jdbcTemplate) {
+    public PgVectorStore pgVectorStore(OllamaEmbeddingModel embeddingModel, JdbcTemplate jdbcTemplate) {
         return PgVectorStore.builder(jdbcTemplate,embeddingModel).vectorTableName("vectorstore").build();
     }
 
@@ -69,19 +70,19 @@ public class RAGmbeddingConfig {
      *  @author:wenzhuo4657
         des: 文档上传
     */
-    @Bean
-    CommandLineRunner ingestTermOfServiceToVectorStore(EmbeddingModel embeddingModel, VectorStore vectorStore,
-                                                       @Value("classpath:rag/terms-of-service.txt") Resource termsOfServiceDocs) {
-
-        return args -> {
-            // Ingest the document into the vector store
-            vectorStore.write(new TokenTextSplitter().transform(new TextReader(termsOfServiceDocs).read()));
-
-            vectorStore.similaritySearch("Cancelling Bookings").forEach(doc -> {
-                log.info("Similar Document: {}", doc.getContent());
-            });
-        };
-    }
+//    @Bean
+//    CommandLineRunner ingestTermOfServiceToVectorStore(EmbeddingModel embeddingModel, VectorStore vectorStore,
+//                                                       @Value("classpath:rag/terms-of-service.txt") Resource termsOfServiceDocs) {
+//
+//        return args -> {
+//            // Ingest the document into the vector store
+//            vectorStore.write(new TokenTextSplitter().transform(new TextReader(termsOfServiceDocs).read()));
+//
+//            vectorStore.similaritySearch("Cancelling Bookings").forEach(doc -> {
+//                log.info("Similar Document: {}", doc.getContent());
+//            });
+//        };
+//    }
 
 
 
